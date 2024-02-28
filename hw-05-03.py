@@ -1,4 +1,5 @@
 import timeit
+
 # Алгоритм пошуку підрядка Boyer-Moore
 def boyer_moore(pattern, text):
     m = len(pattern)
@@ -27,7 +28,6 @@ def boyer_moore(pattern, text):
             i = m - 1
             
     return -1
-
 
 # Алгоритм пошуку підрядка Knuth-Morris-Pratt
 def knuth_morris_pratt(pattern, text):
@@ -61,7 +61,6 @@ def knuth_morris_pratt(pattern, text):
                 j += 1
     
     return -1
-
 
 # Алгоритм пошуку підрядка Rabin-Karp
 def rabin_karp(pattern, text):
