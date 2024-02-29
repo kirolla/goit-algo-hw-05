@@ -67,16 +67,20 @@ def rabin_karp(pattern, text):
     m = len(pattern)
     n = len(text)
     
+    # Ініціалізуємо хеш-значення для тексту та зразка
+    pattern_hash = hash(pattern)
+    text_hash = hash(text[:m])
+
     for i in range(0, n - m + 1):
         if text_hash == pattern_hash:
             if text[i:i+m] == pattern:
                 return i
         if i < n - m:
             # Оновлення хеш-значення для наступного фрагмента тексту
-            text_hash = text_hash - ord(text[i]) + ord(text[i+m])
+            text_hash = hash(text[i+1:i+m+1])
     
     return -1
-
+    
     # Вимірюємо час виконання для кожного алгоритму та підрядка в кожному текстовому файлі
 for text_file in ["article_1.txt", "article_2.txt"]:
     with open(text_file, 'r', encoding='utf-8') as file:
