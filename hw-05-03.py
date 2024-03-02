@@ -90,7 +90,7 @@ for text_file in ["article_1.txt", "article_2.txt"]:
     def measure_time(func, text, pattern):
         return min(timeit.repeat(lambda: func(text, pattern), repeat=3, number=100))
 
-    existing_pattern = "існуючий_підрядок"
+    existing_pattern = "Література"
     fictional_pattern = "вигаданий_підрядок"
 
     print(f"Результати для файлу {text_file}:")
